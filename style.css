@@ -1,4 +1,4 @@
-/* General */
+/* BASE */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -6,133 +6,92 @@ body {
     color: #fff;
 }
 
-/* Hero */
+/* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px 50px;
+    padding: 80px 20px;
 }
-
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+.hero .socials {
+    margin-top: 15px;
 }
-
-.hero p {
-    font-size: 1.3em;
-    margin-bottom: 20px;
-}
-
-.socials a {
+.social-icon {
+    font-size: 2rem;
     margin: 0 10px;
     color: #00fff7;
-    font-size: 1.8em;
-    transition: 0.3s;
+    transition: 0.4s ease;
 }
-.socials a:hover {
+.social-icon:hover {
     color: #fff;
-    transform: scale(1.2);
+    transform: scale(1.25);
 }
 
-/* Universe / Cards */
+/* CARDS */
 .universe {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    padding: 50px 20px;
+    padding: 50px 10px;
 }
-
 .planet-card {
     background: #1e1e1e;
     border-radius: 20px;
-    box-shadow: 0 0 40px #00fff7;
+    box-shadow: 0 0 60px rgba(0,255,247,0.5);
     padding: 20px;
     width: 300px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: float 3s ease-in-out infinite alternate;
+    animation: floatRotate 4s ease-in-out infinite;
+    transition: 0.4s;
 }
-
 .planet-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 60px #00fff7;
+    transform: scale(1.07);
+    box-shadow: 0 0 90px rgba(0,255,247,0.8);
 }
-
 .video-container iframe {
     width: 100%;
-    height: 170px;
-    border-radius: 10px;
+    height: 180px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+.video-container iframe:hover {
+    transform: scale(1.05);
 }
 
-/* Buttons */
+/* BUTTONS */
 .explore-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 25px;
+    padding: 10px 20px;
     border: 2px solid #00fff7;
     border-radius: 25px;
     color: #00fff7;
     text-decoration: none;
-    transition: 0.3s;
+    transition: 0.4s ease;
 }
-
 .explore-btn:hover {
     background: #00fff7;
     color: #000;
 }
 
-/* Floating animation */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-15px); }
+/* FLOAT + ROTATE ANIMATION */
+@keyframes floatRotate {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
 
-/* Contact Section */
-.contact {
-    text-align: center;
-    padding: 60px 20px;
-    background: #111;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
+/* CONTACT */
+.contact { text-align: center; padding: 50px 20px; background: #111; }
+.contact form { max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 12px; }
 .contact input, .contact textarea {
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+    padding: 12px; border-radius: 8px; border: none; outline: none;
 }
-
 .contact button {
-    padding: 12px;
-    border-radius: 25px;
-    border: none;
-    background: #00fff7;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+    padding: 12px; border-radius: 25px; background: #00fff7; color: #000;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
 }
+.contact button:hover { background: #fff; }
 
-.contact button:hover {
-    background: #fff;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    font-size: 0.9em;
-}
-
-/* Responsive */
-@media (max-width: 950px) {
+/* FOOTER */
+footer { text-align: center; padding: 18px; background: #111; }
+@media (max-width: 900px) {
     .universe { flex-direction: column; align-items: center; }
 }
