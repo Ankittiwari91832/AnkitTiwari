@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Content Multiverse 3D Premium</title>
+<title>Content Multiverse</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,52 +12,65 @@
 <!-- STARFIELD -->
 <canvas id="starfield"></canvas>
 
+<!-- CURSOR TRAIL -->
+<canvas id="cursorTrail"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Content Multiverse</div>
+    <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#personal">Personal Opinions</a></li>
+        <li><a href="#godfather">The GodFather</a></li>
+        <li><a href="#sarcastic">The Sarcastic Society</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 <!-- HERO -->
-<header class="hero">
-    <h1>Welcome to the Content Multiverse</h1>
-    <p>Explore my channels in immersive 3D space</p>
+<header class="hero" id="home">
+    <h1>Content Multiverse</h1>
+    <p>Unfiltered • Uncensored • Unstoppable</p>
 </header>
 
 <!-- CHANNEL CARDS -->
 <section class="universe" id="universe">
-
-    <!-- PERSONAL CHANNEL -->
-    <div class="planet-card" data-depth="20">
+    <!-- Personal -->
+    <div class="planet-card" id="personal" data-depth="20">
         <h2>Personal Opinions</h2>
         <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PERSONAL_UPLOADS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
         <div class="channel-socials">
-            <a href="https://www.youtube.com/c/YOUR_PERSONAL_CHANNEL" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/YOUR_PERSONAL_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/c/YOUR_PERSONAL_CHANNEL" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/YOUR_PERSONAL_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <a href="#contact" class="explore-btn">Contact / Sponsor</a>
     </div>
 
-    <!-- GAMING CHANNEL -->
-    <div class="planet-card" data-depth="40">
+    <!-- Gaming -->
+    <div class="planet-card" id="godfather" data-depth="40">
         <h2>The GodFather</h2>
         <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_GAMING_UPLOADS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
         <div class="channel-socials">
-            <a href="https://www.youtube.com/c/TheGodFather" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/YOUR_GAMING_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/c/TheGodFather" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/YOUR_GAMING_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <a href="#contact" class="explore-btn">Contact / Sponsor</a>
     </div>
 
-    <!-- ROAST CHANNEL -->
-    <div class="planet-card" data-depth="60">
+    <!-- Roast -->
+    <div class="planet-card" id="sarcastic" data-depth="60">
         <h2>The Sarcastic Society</h2>
         <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_ROAST_UPLOADS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
         <div class="channel-socials">
-            <a href="https://www.youtube.com/c/TheSarcasticSociety" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/YOUR_ROAST_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/c/YOUR_ROAST_CHANNEL" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/YOUR_ROAST_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <a href="#contact" class="explore-btn">Contact / Sponsor</a>
     </div>
-
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section id="contact">
     <h2>Contact / Sponsors</h2>
     <form>
         <input type="text" placeholder="Your Name" required>
@@ -66,10 +79,6 @@
         <button type="submit">Send Message</button>
     </form>
 </section>
-
-<footer>
-    <p>&copy; 2026 Content Multiverse</p>
-</footer>
 
 <script src="script.js"></script>
 </body>
