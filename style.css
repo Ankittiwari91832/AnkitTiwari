@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    padding: 50px;
+}
+
+.planet {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    background: #1e1e1e;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding-top: 90px;
+}
+
+.planet:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #00fff7, 0 0 80px #00fff7;
+}
+
+.explore-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid #00fff7;
+    border-radius: 20px;
+    color: #00fff7;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: #00fff7;
+    color: #000;
+}
