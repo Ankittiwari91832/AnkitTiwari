@@ -1,10 +1,10 @@
-// SMOOTH SCROLL
+// SMOOTH SCROLL & NAVBAR ACTIVE
 document.querySelectorAll(".nav-links li a, .explore-btn").forEach(btn=>{
     btn.addEventListener("click", e=>{
         e.preventDefault();
         const targetId = btn.getAttribute("href").substring(1);
         document.getElementById(targetId).scrollIntoView({behavior:"smooth"});
-        // Highlight active navbar
+        // Highlight active navbar link
         document.querySelectorAll('.nav-links li a').forEach(l=>l.classList.remove('active'));
         if(btn.classList.contains('nav-links')) btn.classList.add('active');
     });
@@ -14,10 +14,12 @@ document.querySelectorAll(".nav-links li a, .explore-btn").forEach(btn=>{
 const canvas=document.getElementById("starfield");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+let starCount = window.innerWidth<600 ? 100:300;
 const starColors=["#00fff7","#b368ff","#7f8aff"];
 const stars=[];
-for(let i=0;i<300;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,speed:Math.random()*0.5+0.2,color:starColors[Math.floor(Math.random()*3)]}); }
-
+for(let i=0;i<starCount;i++){
+    stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,speed:Math.random()*0.5+0.2,color:starColors[Math.floor(Math.random()*3)]});
+}
 let mouseX=0,mouseY=0;
 document.addEventListener('mousemove', e=>{ mouseX=e.clientX; mouseY=e.clientY; });
 
@@ -36,14 +38,20 @@ animateStars();
 window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
 
 // CURSOR TRAIL
-const cursorCanvas=document.getElementById('cursorTrail'); const ctxC=cursorCanvas.getContext('2d');
+const cursorCanvas=document.getElementById('cursorTrail'); 
+const ctxC=cursorCanvas.getContext('2d');
 cursorCanvas.width=window.innerWidth; cursorCanvas.height=window.innerHeight;
 const particles=[];
-document.addEventListener('mousemove', e=>{ particles.push({x:e.clientX,y:e.clientY,r:Math.random()*4+2,alpha:1,color:starColors[Math.floor(Math.random()*3)]}); });
+document.addEventListener('mousemove', e=>{
+    if(particles.length<50){
+        particles.push({x:e.clientX,y:e.clientY,r:Math.random()*4+2,alpha:1,color:starColors[Math.floor(Math.random()*3)]});
+    }
+});
 function animateParticles(){
     ctxC.clearRect(0,0,cursorCanvas.width,cursorCanvas.height);
     for(let i=particles.length-1;i>=0;i--){
-        const p=particles[i]; ctxC.beginPath(); ctxC.arc(p.x,p.y,p.r,0,Math.PI*2);
+        const p=particles[i];
+        ctxC.beginPath(); ctxC.arc(p.x,p.y,p.r,0,Math.PI*2);
         ctxC.fillStyle=`rgba(${parseInt(p.color.slice(1,3),16)},${parseInt(p.color.slice(3,5),16)},${parseInt(p.color.slice(5,7),16)},${p.alpha})`;
         ctxC.fill(); p.alpha-=0.02; p.y-=0.3;
         if(p.alpha<=0) particles.splice(i,1);
