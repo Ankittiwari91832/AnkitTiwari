@@ -1,164 +1,74 @@
 /* BASE */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-    background: #0f2027;
-    color: #fff;
-    perspective: 1500px;
+    margin:0; padding:0; font-family:'Arial', sans-serif;
+    background:#0f2027; color:#fff; perspective:1500px;
+    overflow-x:hidden;
 }
 
-/* STARFIELD */
-#starfield {
-    position: fixed;
-    top:0; left:0;
-    width:100%;
-    height:100%;
-    z-index: -1;
+/* STARFIELD & CURSOR TRAIL */
+#starfield, #cursorTrail {
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    z-index:-1;
 }
+
+/* NAVBAR */
+.navbar {
+    position:fixed; top:0; width:100%;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:15px 50px; background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(5px); z-index:1000;
+}
+.navbar .logo { font-size:1.5em; color:#00fff7; font-weight:bold; }
+.navbar .nav-links { list-style:none; display:flex; gap:25px; }
+.navbar .nav-links li a { color:#fff; text-decoration:none; transition:0.3s; }
+.navbar .nav-links li a:hover, .navbar .nav-links li a.active { color:#00fff7; box-shadow:0 0 10px #00fff7; }
 
 /* HERO */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
-.hero h1 {
-    font-size: 3em;
-    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-}
-.hero p {
-    font-size: 1.2em;
-    margin-top: 10px;
-}
+.hero { padding:120px 20px 80px 20px; text-align:center; }
+.hero h1 { font-size:3em; text-shadow:0 0 10px #00fff7; margin:0; }
+.hero p { font-size:1.2em; margin-top:10px; }
 
-/* UNIVERSE */
-.universe {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 50px 10px;
-    transform-style: preserve-3d;
-}
-
-/* PLANET CARDS */
+/* CHANNEL CARDS */
+.universe { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; padding:50px 20px; transform-style:preserve-3d; }
 .planet-card {
-    background: rgba(30,30,30,0.95);
-    border-radius: 20px;
-    box-shadow: 0 0 80px rgba(0,255,247,0.5);
-    width: 320px;
-    text-align: center;
-    padding: 20px;
+    background: rgba(30,30,30,0.95); border-radius:20px;
+    width:320px; padding:20px; text-align:center;
+    box-shadow:0 0 80px rgba(0,255,247,0.5);
     transition: transform 0.5s, box-shadow 0.5s;
-    animation: floatRotate 5s ease-in-out infinite;
-    opacity: 0;
-    transform: translateY(50px);
-    border: 2px solid rgba(0,255,247,0.7);
+    opacity:0; transform:translateY(50px);
+    border:2px solid rgba(0,255,247,0.7);
     animation: floatRotate 5s ease-in-out infinite, neonPulse 3s infinite alternate;
 }
-.planet-card.visible {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: transform 0.7s, opacity 0.7s;
-}
-.planet-card iframe {
-    width: 100%;
-    height: 300px;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-.planet-card:hover {
-    transform: rotateY(15deg) rotateX(10deg) scale(1.08);
-    box-shadow: 0 0 150px #00fff7, 0 0 200px #00fff7 inset;
-}
-.planet-card iframe:hover {
-    transform: scale(1.05);
-}
+.planet-card.visible { opacity:1; transform:translateY(0); transition:transform 0.7s, opacity 0.7s; }
+.planet-card iframe { width:100%; height:300px; border-radius:12px; transition: transform 0.3s ease; }
+.planet-card:hover { transform:rotateY(15deg) rotateX(10deg) scale(1.08); box-shadow:0 0 150px #00fff7,0 0 200px #00fff7 inset; }
 
-/* CHANNEL SOCIAL ICONS */
-.channel-socials {
-    margin-top: 10px;
-}
-.channel-socials a {
-    margin: 0 8px;
-    font-size: 1.5rem;
-    color: #00fff7;
-    transition: 0.3s;
-    animation: neonPulse 2s infinite alternate;
-}
-.channel-socials a:hover {
-    color: #fff;
-    transform: scale(1.3);
-}
+/* CHANNEL SOCIALS */
+.channel-socials { margin-top:10px; }
+.channel-socials a { margin:0 8px; font-size:1.5rem; color:#00fff7; transition:0.3s; animation:neonPulse 2s infinite alternate; }
+.channel-socials a:hover { color:#fff; transform:scale(1.3); }
 
 /* BUTTONS */
 .explore-btn {
-    padding: 10px 25px;
-    border: 2px solid #00fff7;
-    border-radius: 25px;
-    color: #00fff7;
-    text-decoration: none;
-    margin-top: 12px;
-    display: inline-block;
-    transition: 0.4s ease;
-    animation: neonPulse 2s infinite;
+    padding:10px 25px; border:2px solid #00fff7; border-radius:25px;
+    color:#00fff7; text-decoration:none; margin-top:12px; display:inline-block;
+    transition:0.4s ease; animation:neonPulse 2s infinite;
 }
-.explore-btn:hover {
-    background: #00fff7;
-    color: #000;
-}
+.explore-btn:hover { background:#00fff7; color:#000; }
 
-/* NEON PULSE ANIMATION */
+/* NEON PULSE */
 @keyframes neonPulse {
-    0%, 100% { box-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7; }
-    50% { box-shadow: 0 0 15px #00fff7, 0 0 30px #00fff7, 0 0 45px #00fff7; }
+    0%,100%{ box-shadow:0 0 5px #00fff7,0 0 10px #00fff7,0 0 20px #00fff7;}
+    50%{ box-shadow:0 0 15px #00fff7,0 0 30px #00fff7,0 0 45px #00fff7;}
 }
-
-/* FLOAT ANIMATION */
-@keyframes floatRotate {
-    0% { transform: translateY(0px) rotate(0deg);}
-    50% { transform: translateY(-15px) rotate(3deg);}
-    100% { transform: translateY(0px) rotate(0deg);}
-}
+@keyframes floatRotate { 0%{transform:translateY(0) rotate(0);}50%{transform:translateY(-15px) rotate(3deg);}100%{transform:translateY(0) rotate(0);} }
 
 /* CONTACT */
-.contact {
-    text-align: center;
-    padding: 50px 20px;
-    background: rgba(17,17,17,0.95);
-}
-.contact form {
-    max-width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.contact input, .contact textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
-.contact button {
-    padding: 12px;
-    border-radius: 25px;
-    background: #00fff7;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.contact button:hover { background: #fff; }
+#contact { padding:50px 20px; text-align:center; background:#111; }
+#contact form { max-width:400px; margin:auto; display:flex; flex-direction:column; gap:12px; }
+#contact input, #contact textarea { padding:12px; border-radius:8px; border:none; outline:none; }
+#contact button { padding:12px; border-radius:25px; background:#00fff7; color:#000; cursor:pointer; font-weight:bold; transition:0.3s; }
+#contact button:hover { background:#fff; color:#000; }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 18px;
-    background: rgba(17,17,17,0.95);
-}
-
-@media (max-width:900px) {
-    .universe { flex-direction: column; align-items: center; }
-}
+/* RESPONSIVE */
+@media(max-width:900px){ .universe{flex-direction:column; align-items:center;} }
