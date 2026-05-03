@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Multiverse</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Multiverse 3D Premium</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+<!-- STARFIELD -->
+<canvas id="starfield"></canvas>
 
 <!-- HERO -->
 <header class="hero">
     <h1>Welcome to the Content Multiverse</h1>
-    <p>Your central hub for all my videos & content</p>
-    <div class="socials">
-        <a href="https://www.youtube.com/c/YOUR_PERSONAL_CHANNEL" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/YOUR_TWITTER" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-    </div>
+    <p>Explore my channels in immersive 3D space</p>
 </header>
 
-<!-- CHANNELS / PLAYLIST EMBEDS -->
-<section class="universe">
+<!-- CHANNEL CARDS -->
+<section class="universe" id="universe">
 
-    <div class="planet-card">
+    <!-- PERSONAL CHANNEL -->
+    <div class="planet-card" data-depth="20">
         <h2>Personal Opinions</h2>
-        <iframe width="100%" height="300" 
-            src="https://www.youtube.com/embed/videoseries?list=YOUR_PERSONAL_UPLOADS_PLAYLIST_ID" 
-            frameborder="0" allowfullscreen></iframe>
-        <a href="https://www.youtube.com/c/YOUR_PERSONAL_CHANNEL" target="_blank" class="explore-btn">Visit Channel</a>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PERSONAL_UPLOADS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+        <div class="channel-socials">
+            <a href="https://www.youtube.com/c/YOUR_PERSONAL_CHANNEL" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/YOUR_PERSONAL_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="#contact" class="explore-btn">Contact / Sponsor</a>
     </div>
 
-    <div class="planet-card">
+    <!-- GAMING CHANNEL -->
+    <div class="planet-card" data-depth="40">
         <h2>The GodFather</h2>
-        <iframe width="100%" height="300" 
-            src="https://www.youtube.com/embed/videoseries?list=YOUR_GAMING_UPLOADS_PLAYLIST_ID" 
-            frameborder="0" allowfullscreen></iframe>
-        <a href="https://www.youtube.com/c/TheGodFather" target="_blank" class="explore-btn">Visit Channel</a>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_GAMING_UPLOADS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+        <div class="channel-socials">
+            <a href="https://www.youtube.com/c/TheGodFather" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/YOUR_GAMING_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="#contact" class="explore-btn">Contact / Sponsor</a>
     </div>
 
-    <div class="planet-card">
+    <!-- ROAST CHANNEL -->
+    <div class="planet-card" data-depth="60">
         <h2>The Sarcastic Society</h2>
-        <iframe width="100%" height="300" 
-            src="https://www.youtube.com/embed/videoseries?list=YOUR_ROAST_UPLOADS_PLAYLIST_ID" 
-            frameborder="0" allowfullscreen></iframe>
-        <a href="https://www.youtube.com/c/TheSarcasticSociety" target="_blank" class="explore-btn">Visit Channel</a>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_ROAST_UPLOADS_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+        <div class="channel-socials">
+            <a href="https://www.youtube.com/c/TheSarcasticSociety" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/YOUR_ROAST_INSTAGRAM" target="_blank" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="#contact" class="explore-btn">Contact / Sponsor</a>
     </div>
 
 </section>
