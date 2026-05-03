@@ -1,5 +1,5 @@
 // ————— CONFIG —————
-const API_KEY = "AIzaSyBtWXs6954u0k-3epCdr7jUJFVYHsiSmvA"; 
+const API_KEY = "API"; 
 const playlists = {
     personal: "YOUR_PERSONAL_UPLOADS_PLAYLIST_ID",
     gaming:  "YOUR_GAMING_UPLOADS_PLAYLIST_ID",
