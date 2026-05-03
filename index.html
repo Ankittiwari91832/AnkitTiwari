@@ -5,52 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Multiverse</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- Hero Section -->
+    <header class="hero">
         <h1>Welcome to the Content Multiverse</h1>
-        <p>Explore my channels and join the journey!</p>
+        <p>Your one hub for all my content: opinions, gaming, and roast commentary</p>
+        <div class="socials">
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
     </header>
 
-    <section id="universe">
-        <div class="planet" id="personal">
+    <!-- Channels Section -->
+    <section class="universe">
+        <div class="planet-card">
             <h2>Personal Opinions</h2>
-            <a href="#personal-channel" class="explore-btn">Explore</a>
+            <div class="video-container">
+                <iframe src="YOUR_PERSONAL_VIDEO_LINK" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="#personal" class="explore-btn">Explore</a>
         </div>
-        <div class="planet" id="gaming">
+        <div class="planet-card">
             <h2>The GodFather</h2>
-            <a href="#gaming-channel" class="explore-btn">Explore</a>
+            <div class="video-container">
+                <iframe src="YOUR_GAMING_VIDEO_LINK" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="#gaming" class="explore-btn">Explore</a>
         </div>
-        <div class="planet" id="roast">
+        <div class="planet-card">
             <h2>The Sarcastic Society</h2>
-            <a href="#roast-channel" class="explore-btn">Explore</a>
+            <div class="video-container">
+                <iframe src="YOUR_ROAST_VIDEO_LINK" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="#roast" class="explore-btn">Explore</a>
         </div>
     </section>
 
-    <section id="personal-channel">
-        <h2>Personal Opinions</h2>
-        <iframe width="560" height="315" src="YOUR_PERSONAL_VIDEO_LINK" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <section id="gaming-channel">
-        <h2>The GodFather</h2>
-        <iframe width="560" height="315" src="YOUR_GAMING_VIDEO_LINK" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <section id="roast-channel">
-        <h2>The Sarcastic Society</h2>
-        <iframe width="560" height="315" src="YOUR_ROAST_VIDEO_LINK" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <section id="socials">
-        <h2>Follow Me</h2>
-        <div class="social-links">
-            <!-- Social media icons -->
-        </div>
+    <!-- Sponsors / Contact -->
+    <section class="contact">
+        <h2>Contact / Sponsors</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <footer>
-        <p>&copy; 2026 Content Multiverse. All rights reserved.</p>
+        <p>&copy; 2026 Content Multiverse. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
